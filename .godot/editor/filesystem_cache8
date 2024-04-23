@@ -1,0 +1,9 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1713856449
+cat_idle.png::CompressedTexture2D::9126106262405410185::1713843029::1713856450::1::::<><>::
+cat_side_face.png::CompressedTexture2D::540555751024594485::1713843635::1713856450::1::::<><>::
+icon.svg::CompressedTexture2D::3969579309413794621::1713228650::1713856450::1::::<><>::
+README.md::TextFile::-1::1713855469::0::1::::<><>::
+::res://Scenes/::1713856324
+cat_player.tscn::PackedScene::2417446465924632482::1713844162::0::1::::<><>::uid://hx34yviwc3av::::res://cat_side_face.png
+world.tscn::PackedScene::3571396951844433648::1713854206::0::1::::<><>::uid://bapa8ws533it3::::res://Scenes/cat_player.tscn
