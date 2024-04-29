@@ -3,13 +3,16 @@
 [ext_resource type="Script" path="res://Scripts/cat_player.gd" id="1_jy8bo"]
 [ext_resource type="Texture2D" uid="uid://hx34yviwc3av" path="res://Assets/CatPlayerSprites/cat_side_face.png" id="1_y4075"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yo7s"]
-size = Vector2(58, 55)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_typk0"]
+radius = 23.0
+height = 64.0
 
 [node name="CatPlayer" type="CharacterBody2D"]
 slide_on_ceiling = false
 floor_block_on_wall = false
 script = ExtResource("1_jy8bo")
+SPEED = 130.0
+JUMP_VELOCITY = -300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -17,8 +20,10 @@ position = Vector2(0, -32)
 texture = ExtResource("1_y4075")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -27.5)
-shape = SubResource("RectangleShape2D_8yo7s")
+position = Vector2(9.23706e-14, -23)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_typk0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -118)
+position = Vector2(0, -32)
+zoom = Vector2(2, 2)
