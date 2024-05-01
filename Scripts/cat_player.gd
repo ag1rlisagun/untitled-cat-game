@@ -17,7 +17,7 @@ func _physics_process(delta):
 
 	# JUMP
 	# can add double jump/wall jump/etc.
-	if Input.is_action_just_pressed("jump"): # and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -38,24 +38,43 @@ func _physics_process(delta):
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		
-	# Play Animations
-	if direction == 0:
-		animated_sprite.play("side idle")
-	elif direction > 0 || direction < 0:
-		animated_sprite.play("move")
-		
-	
+#	# Play Animations
+#	if is_on_floor():
+#		if Input.is_action_just_pressed("jump"):
+#			animated_sprite.play("jump")
+#		if direction == 0:
+#			animated_sprite.play("side idle")
+#		elif direction != 0:
+#			if Input.is_action_just_pressed("sprint"):
+#				animated_sprite.play("sprint")
+#			else:
+#				animated_sprite.play("move")
+##	else:
+##		animated_sprite.play("fall")
+
+ # Play Animations
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite.play("side idle")
+			if Input.is_action_just_pressed("jump"):
+				animated_sprite.play("jump")
+		else: 
+			if Input.is_action_just_pressed("jump"):
+				animated_sprite.play("jump")
+			elif Input.is_action_pressed("sprint"):
+				animated_sprite.play("sprint")
+			else:
+				animated_sprite.play("move")
+	else:
+		if velocity.y > 0:
+			animated_sprite.play("fall")  # Play falling animation when not on floor
 	
 	# Applies movement
-	animated_sprite.set_speed_scale(1)
-	
 	if direction:
 		if Input.is_action_pressed("sprint"): 
 			velocity.x = direction * SPEED * 2
-			animated_sprite.set_speed_scale(2)
 		else:
 			velocity.x = direction * SPEED
-			animated_sprite.set_speed_scale(1)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

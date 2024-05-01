@@ -1,11 +1,35 @@
-[gd_scene load_steps=25 format=3 uid="uid://bapa8ws533it3"]
+[gd_scene load_steps=40 format=3 uid="uid://bapa8ws533it3"]
 
 [ext_resource type="Script" path="res://Scripts/cat_player.gd" id="1_jy8bo"]
+[ext_resource type="Texture2D" uid="uid://cej456fpbmeqo" path="res://Assets/CatPlayerSprites/cat_carried_sprite_sheet_(3_frames).png" id="2_iclrn"]
 [ext_resource type="Texture2D" uid="uid://bsw5gsf5vp1rm" path="res://Assets/CatPlayerSprites/cat_sprite_sheet_(10x2).png" id="2_kuv36"]
+[ext_resource type="Texture2D" uid="uid://o7wjopw25es0" path="res://Assets/CatPlayerSprites/cat_idle_sprites/cat_idle_animation-1.png" id="3_2qd4o"]
+[ext_resource type="Texture2D" uid="uid://2wkhn47u2oh6" path="res://Assets/CatPlayerSprites/cat_idle_sprites/cat_idle_animation-2.png" id="4_kndw7"]
+[ext_resource type="Texture2D" uid="uid://deyf2yjkru54q" path="res://Assets/CatPlayerSprites/cat_idle_sprites/cat_idle_animation-3.png" id="5_cmhsl"]
+[ext_resource type="Texture2D" uid="uid://q6lny26b3ufn" path="res://Assets/CatPlayerSprites/cat_idle_sprites/cat_idle_animation-4.png" id="6_vxb0n"]
+[ext_resource type="Texture2D" uid="uid://fhftmba4pk0p" path="res://Assets/CatPlayerSprites/cat_idle_sprites/cat_idle_animation-5.png" id="7_5v3ly"]
+[ext_resource type="Texture2D" uid="uid://c7etv3hld2f6i" path="res://Assets/CatPlayerSprites/cat_idle_sprites/cat_idle_animation-6.png" id="8_a1833"]
+[ext_resource type="Texture2D" uid="uid://c0qss1bh0cqs0" path="res://Assets/CatPlayerSprites/cat_sprint_jump_sprites/cat_sprintjump_animation-1.png" id="9_w6hht"]
+[ext_resource type="Texture2D" uid="uid://dcvtg5q1uqlv0" path="res://Assets/CatPlayerSprites/cat_sprint_jump_sprites/cat_sprintjump_animation-2.png" id="10_rjuv5"]
+[ext_resource type="Texture2D" uid="uid://bk4ael2xhob3p" path="res://Assets/CatPlayerSprites/cat_sprint_jump_sprites/cat_sprintjump_animation-3.png" id="11_cet2h"]
+[ext_resource type="Texture2D" uid="uid://b2iywgqnxyjrb" path="res://Assets/CatPlayerSprites/cat_sprint_jump_sprites/cat_sprintjump_animation-4.png" id="12_pt70g"]
+[ext_resource type="Texture2D" uid="uid://bxqfp142kecp3" path="res://Assets/CatPlayerSprites/cat_sprint_jump_sprites/cat_sprintjump_animation-5.png" id="14_6wha1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_typk0"]
 radius = 17.0
 height = 68.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp062"]
+atlas = ExtResource("2_iclrn")
+region = Rect2(0, 0, 72, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irkqn"]
+atlas = ExtResource("2_iclrn")
+region = Rect2(72, 0, 72, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5u6t"]
+atlas = ExtResource("2_iclrn")
+region = Rect2(144, 0, 72, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6exp"]
 atlas = ExtResource("2_kuv36")
@@ -91,6 +115,84 @@ region = Rect2(594, 0, 65, 60)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xp062")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irkqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5u6t")
+}],
+"loop": true,
+"name": &"carry",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crawl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp062")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2qd4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kndw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cmhsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vxb0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5v3ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a1833")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("9_w6hht")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_rjuv5")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_cet2h")
+}, {
+"duration": 0.5,
+"texture": ExtResource("12_pt70g")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w6hht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6exp")
+}],
+"loop": false,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_m6exp")
 }, {
 "duration": 1.0,
@@ -158,6 +260,26 @@ animations = [{
 "loop": true,
 "name": &"side idle",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("9_w6hht")
+}, {
+"duration": 0.7,
+"texture": ExtResource("10_rjuv5")
+}, {
+"duration": 0.7,
+"texture": ExtResource("11_cet2h")
+}, {
+"duration": 0.7,
+"texture": ExtResource("12_pt70g")
+}, {
+"duration": 0.7,
+"texture": ExtResource("14_6wha1")
+}],
+"loop": true,
+"name": &"sprint",
+"speed": 8.0
 }]
 
 [node name="CatPlayer" type="CharacterBody2D"]
@@ -174,12 +296,10 @@ shape = SubResource("CapsuleShape2D_typk0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1.5, -62)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -30)
 sprite_frames = SubResource("SpriteFrames_4ltdl")
-animation = &"move"
-autoplay = "side idle"
-frame_progress = 0.375349
+animation = &"jump"
