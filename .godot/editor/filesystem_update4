@@ -1,4 +1,7 @@
-res://Scenes/world.tscn
 res://Scenes/cat_player.tscn
+res://Resources/cat_crouch.tres
+res://Resources/cat_regular.tres
 res://Scenes/game.tscn
 res://Scripts/cat_player.gd
+res://Resources/cat_standing.tres
+res://Resources/cat_crawling.tres

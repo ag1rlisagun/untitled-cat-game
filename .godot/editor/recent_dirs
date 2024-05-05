@@ -1,5 +1,11 @@
-res://Assets/CatPlayerSprites
+res://Resources
 res://Assets/CatPlayerSprites/cat_sprint_jump_sprites
+res://Assets/CatPlayerSprites/cat_side_idle_sprites
+res://Assets/CatPlayerSprites/cat_move_sprites
 res://Assets/CatPlayerSprites/cat_idle_sprites
+res://Assets/CatPlayerSprites/cat_fall_sprites
+res://Assets/CatPlayerSprites/cat_crawl_sprites
+res://Assets/CatPlayerSprites/cat_carry_sprites
+res://Assets/CatPlayerSprites
 res://Assets
 res://Scripts
