@@ -149,7 +149,7 @@ JUMP_VELOCITY = -700.0
 
 [node name="Camera2D2" type="Camera2D" parent="CatPlayer"]
 position = Vector2(1.5, -62)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(3, 3)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_xgok4")
